@@ -11,7 +11,7 @@ class CustomerTest < MiniTest::Test
 
     def setup()
         @pub = Pub.new("Shandwicks", [@drink1, @drink2, @drink3])
-        @customer = Customer.new("Stephen", 20.00)
+        @customer = Customer.new("Stephen", 20.00, 25)
         @drink1 = Drink.new("Carling", 1.75)
         @drink2 = Drink.new("Hop House 13", 2.00)
         @drink3 = Drink.new("Smirnoff", 1.50)    
@@ -23,6 +23,10 @@ class CustomerTest < MiniTest::Test
 
     def test_get_wallet()
         assert_equal(20.00, @customer.wallet())
+    end
+        
+    def test_get_age()
+        assert_equal(25, @customer.age())
     end
 
     def test_remove_cash()
