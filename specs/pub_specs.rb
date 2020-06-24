@@ -14,6 +14,7 @@ class PubTest < MiniTest::Test
         @drink2 = Drink.new("Hop House 13", 2.00)
         @drink3 = Drink.new("Smirnoff", 1.50)
         @pub = Pub.new("Shandwicks", [@drink1, @drink2, @drink3])
+        @customer = Customer.new("Stephen", 20.00, 25)
     end
 
     def test_get_pub_name()
@@ -36,6 +37,10 @@ class PubTest < MiniTest::Test
     def test_increase_till()
         @pub.increase_till(1.50)
         assert_equal(151.50, @pub.till)
+    end
+
+    def test_is_of_age()
+        assert_equal(true, @pub.is_of_age(@customer))
     end
 
 end

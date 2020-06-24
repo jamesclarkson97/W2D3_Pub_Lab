@@ -13,8 +13,10 @@ class Customer
     end
 
     def buy_drink_from_pub(drink, customer, pub)
-        customer.remove_cash(drink.price)
-        pub.increase_till(drink.price)
+        if pub.is_of_age(customer) == true
+            customer.remove_cash(drink.price)
+            pub.increase_till(drink.price)
+        end
     end
     
 end

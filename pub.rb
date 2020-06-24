@@ -26,6 +26,13 @@ class Pub
         @till += amount
     end
 
+    def is_of_age(customer)
+        if customer.age >= 18
+            return true
+        end
+        return false
+    end
+
 end
     # def get_drink_price(requested_drink_name)         
     #     return get_drink_name(requested_drink_name).price
