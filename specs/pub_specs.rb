@@ -63,4 +63,8 @@ class PubTest < MiniTest::Test
         assert_equal(@drink1, drink)
     end
 
+    def test_stock_value()
+        assert_equal(14, @pub.stock_value())
+    end
+
 end

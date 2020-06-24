@@ -51,6 +51,15 @@ class Pub
         return nil
     end
 
+    def stock_value()
+        total_stock = 0
+        for drink in @drinks
+            total_stock += drink[:stock]
+        end
+        return total_stock
+    end
+
+
 end
     # def get_drink_price(requested_drink_name)         
     #     return get_drink_name(requested_drink_name).price
