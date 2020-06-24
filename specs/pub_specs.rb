@@ -40,14 +40,6 @@ class PubTest < MiniTest::Test
     def test_check_if_too_drunk__too_drunk()
         assert_equal("No more for you", @pub.check_if_too_drunk(@customer))
     end
-
-    # def test_get_drinks_array()
-    #     p @drink1.drink_name
-    #     p @pub.drinks[0]
-    #     p @pub.drinks[1]
-    #     p @pub.drinks[2]
-    #     assert_equal(3, @pub.drinks.length)
-    # end
     
     def test_increase_till()
         @pub.increase_till(1.50)

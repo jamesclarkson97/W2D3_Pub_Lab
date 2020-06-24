@@ -81,8 +81,3 @@ class CustomerTest < MiniTest::Test
         assert_equal(1, @customer.drunkenness())
     end
 end
-
-    # def test_reduce_wallet()
-    #     assert_equal(18.00, @customer.reduce_wallet("Hop House 13"))
-    # end
-

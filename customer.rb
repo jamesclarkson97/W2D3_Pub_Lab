@@ -40,13 +40,3 @@ class Customer
 
     
 end
-
-    # def reduce_wallet(requested_drink_name)
-    #     price = @pub.get_drink_price(requested_drink_name)
-    #     @wallet -= price
-    # end
-
-
-    # def buy_drink(drink_name)
-
-
