@@ -19,6 +19,10 @@ class Customer
             pub.increase_till(drink.price)
         end
     end
+
+   
+
+
     
 end
 

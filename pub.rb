@@ -33,6 +33,14 @@ class Pub
         return false
     end
 
+    def check_if_too_drunk(customer)
+        if customer.drunkenness() >= 20
+            return "No more for you"  
+        else
+            return nil
+        end
+    end
+
 end
     # def get_drink_price(requested_drink_name)         
     #     return get_drink_name(requested_drink_name).price

@@ -27,6 +27,14 @@ class PubTest < MiniTest::Test
         assert_equal(@drink1, drink)
     end
 
+    def test_check_if_too_drunk__nil()
+        assert_nil(@pub.check_if_too_drunk(@customer))
+    end
+
+    def test_check_if_too_drunk__too_drunk()
+        assert_equal("No more for you", @pub.check_if_too_drunk(@customer))
+    end
+
     # def test_get_drinks_array()
     #     p @drink1.drink_name
     #     p @pub.drinks[0]
