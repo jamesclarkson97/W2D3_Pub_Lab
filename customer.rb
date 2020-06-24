@@ -1,11 +1,12 @@
 class Customer
 
-    attr_reader :name, :wallet, :age
+    attr_reader :name, :wallet, :age, :drunkenness
 
     def initialize(name, wallet, age)
         @name = name
         @wallet = wallet
         @age = age
+        @drunkenness = 0
     end
 
     def remove_cash(amount)

@@ -13,9 +13,9 @@ class CustomerTest < MiniTest::Test
         @pub = Pub.new("Shandwicks", [@drink1, @drink2, @drink3])
         @customer = Customer.new("Stephen", 20.00, 25)
         @customer2 = Customer.new("James", 500.00, 15)
-        @drink1 = Drink.new("Carling", 1.75)
-        @drink2 = Drink.new("Hop House 13", 2.00)
-        @drink3 = Drink.new("Smirnoff", 1.50)    
+        @drink1 = Drink.new("Carling", 1.75, 2)
+        @drink2 = Drink.new("Hop House 13", 2.00, 3)
+        @drink3 = Drink.new("Smirnoff", 1.50, 4)    
     end
 
     def test_get_name()
@@ -30,19 +30,23 @@ class CustomerTest < MiniTest::Test
         assert_equal(25, @customer.age())
     end
 
+    def test_get_drunkenness()
+        assert_equal(0, @customer.drunkenness())
+    end
+
     def test_remove_cash()
         @customer.remove_cash(1.50)
         assert_equal(18.50, @customer.wallet())
     end
     
-    def test_buy_drink_from_pub__pass()
+    def test_buy_drink_from_pub__of_age()
         @customer.buy_drink_from_pub(@drink3, @customer, @pub)
         assert_equal(18.50, @customer.wallet())
         assert_equal(151.50, @pub.till())
         assert_equal(true, @pub.is_of_age(@customer))
     end
 
-    def test_buy_drink_from_pub__fail()
+    def test_buy_drink_from_pub__underage()
         @customer2.buy_drink_from_pub(@drink3, @customer2, @pub)
         assert_equal(500.00, @customer2.wallet())
         assert_equal(150.00, @pub.till())
