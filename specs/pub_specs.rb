@@ -10,6 +10,9 @@ require_relative("drink_specs")
 class PubTest < MiniTest::Test
 
     def setup()
+        @drink1 = Drink.new("Carling", 1.75)
+        @drink2 = Drink.new("Hop House 13", 2.00)
+        @drink3 = Drink.new("Smirnoff", 1.50)
         @pub = Pub.new("Shandwicks", [@drink1, @drink2, @drink3])
     end
 
@@ -18,8 +21,16 @@ class PubTest < MiniTest::Test
     end
 
     def test_get_drink()
-        @pub.get_drink("Carling")
-        assert_equal("Carling", @drink1.drink_name)
+        drink = @pub.get_drink("Carling")
+        assert_equal(@drink1, drink)
     end
+
+    # def test_get_drinks_array()
+    #     p @drink1.drink_name
+    #     p @pub.drinks[0]
+    #     p @pub.drinks[1]
+    #     p @pub.drinks[2]
+    #     assert_equal(3, @pub.drinks.length)
+    # end
     
 end

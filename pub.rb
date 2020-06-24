@@ -8,13 +8,18 @@ class Pub
         @drinks = drinks
     end
 
-    def get_drink(requested_drink)
+    def get_drink(requested_drink_name)
+               
         for drink in @drinks
-            if @drinks.drink_name() == requested_drink
-                return drink.drink_name()
+            if drink.name == requested_drink_name
+                return drink
             end
         end
         return nil
     end
-    
+   
+    def get_drinks_array()
+        return @drinks.length
+    end
+
 end

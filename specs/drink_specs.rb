@@ -14,12 +14,12 @@ class DrinkTest < MiniTest::Test
     end
 
     def test_get_drink_by_name()
-        assert_equal("Carling", @drink1.drink_name())
+        assert_equal("Carling", @drink1.name())
     end
 
     def test_get_drink_by_price()
         assert_equal(1.75, @drink1.price())
     end
-    
+
 end
 
