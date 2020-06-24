@@ -24,7 +24,10 @@ class Customer
         @drunkenness += drink.alcohol_level()
    end
 
-
+   def buy_food_from_pub(food, customer, pub)
+        customer.remove_cash(food.price)
+        pub.increase_till(food.price)
+    end
     
 end
 
