@@ -53,6 +53,11 @@ class CustomerTest < MiniTest::Test
         assert_equal(false, @pub.is_of_age(@customer2))
     end
 
+    def test_down_drink()
+        @customer.down_drink(@drink1)
+        assert_equal(2, @customer.drunkenness())
+    end
+
 end
 
     # def test_reduce_wallet()

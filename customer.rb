@@ -20,7 +20,9 @@ class Customer
         end
     end
 
-   
+   def down_drink(drink)
+        @drunkenness += drink.alcohol_level()
+   end
 
 
     
