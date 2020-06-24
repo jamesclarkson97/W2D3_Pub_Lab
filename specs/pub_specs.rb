@@ -15,6 +15,7 @@ class PubTest < MiniTest::Test
         @drink3 = Drink.new("Smirnoff", 1.50)
         @pub = Pub.new("Shandwicks", [@drink1, @drink2, @drink3])
         @customer = Customer.new("Stephen", 20.00, 25)
+        @customer2 = Customer.new("James", 500.00, 15)
     end
 
     def test_get_pub_name()
