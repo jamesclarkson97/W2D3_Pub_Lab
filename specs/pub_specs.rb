@@ -33,4 +33,9 @@ class PubTest < MiniTest::Test
     #     assert_equal(3, @pub.drinks.length)
     # end
     
+    def test_increase_till()
+        @pub.increase_till(1.50)
+        assert_equal(151.50, @pub.till)
+    end
+
 end

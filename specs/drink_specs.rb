@@ -1,8 +1,9 @@
 require("minitest/autorun")
 require('minitest/reporters')
 
-require_relative('../drink')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
+require_relative('../drink')
 
 class DrinkTest < MiniTest::Test
 
@@ -10,7 +11,6 @@ class DrinkTest < MiniTest::Test
         @drink1 = Drink.new("Carling", 1.75)
         @drink2 = Drink.new("Hop House 13", 2.00)
         @drink3 = Drink.new("Smirnoff", 1.50)
-
     end
 
     def test_get_drink_by_name()
@@ -22,4 +22,3 @@ class DrinkTest < MiniTest::Test
     end
 
 end
-

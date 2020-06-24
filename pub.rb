@@ -22,4 +22,12 @@ class Pub
         return @drinks.length
     end
 
+    def increase_till(amount)
+        @till += amount
+    end
+
 end
+    # def get_drink_price(requested_drink_name)         
+    #     return get_drink_name(requested_drink_name).price
+    # end
+   
