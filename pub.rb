@@ -42,6 +42,15 @@ class Pub
         end
     end
 
+    def check_stock_individual(requested_drink_name)
+        for drink in @drinks
+            if drink[:stock] > 0 && drink[:drink].name == requested_drink_name
+                return drink[:drink]
+            end
+        end
+        return nil
+    end
+
 end
     # def get_drink_price(requested_drink_name)         
     #     return get_drink_name(requested_drink_name).price

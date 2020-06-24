@@ -58,4 +58,9 @@ class PubTest < MiniTest::Test
         assert_equal(true, @pub.is_of_age(@customer))
     end
 
+    def test_check_stock_individual()
+        drink = @pub.check_stock_individual("Carling")
+        assert_equal(@drink1, drink)
+    end
+
 end
