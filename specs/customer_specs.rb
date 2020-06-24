@@ -44,14 +44,14 @@ class CustomerTest < MiniTest::Test
     end
     
     def test_buy_drink_from_pub__of_age()
-        @customer.buy_drink_from_pub(@drink3, @customer, @pub)
+        @customer.buy_drink_from_pub(@drink3, @pub)
         assert_equal(18.50, @customer.wallet())
         assert_equal(151.50, @pub.till())
         assert_equal(true, @pub.is_of_age(@customer))
     end
 
     def test_buy_drink_from_pub__underage()
-        @customer2.buy_drink_from_pub(@drink3, @customer2, @pub)
+        @customer2.buy_drink_from_pub(@drink3, @pub)
         assert_equal(500.00, @customer2.wallet())
         assert_equal(150.00, @pub.till())
         assert_equal(false, @pub.is_of_age(@customer2))
@@ -70,7 +70,7 @@ class CustomerTest < MiniTest::Test
     end
 
     def test_buy_food_from_pub()
-        @customer.buy_food_from_pub(@food3, @customer, @pub)
+        @customer.buy_food_from_pub(@food3, @pub)
         assert_equal(19.00, @customer.wallet())
         assert_equal(151.00, @pub.till())
     end

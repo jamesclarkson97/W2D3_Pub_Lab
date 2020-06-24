@@ -13,10 +13,10 @@ class Customer
         @wallet -= amount
     end
 
-    def buy_drink_from_pub(drink, customer, pub)
-        if pub.is_of_age(customer) == true
-            customer.remove_cash(drink.price)
-            customer.down_drink(drink)
+    def buy_drink_from_pub(drink, pub)
+        if pub.is_of_age(self) == true
+            remove_cash(drink.price)
+            down_drink(drink)
             pub.increase_till(drink.price)
         end
         
@@ -31,9 +31,9 @@ class Customer
     end
 
 
-    def buy_food_from_pub(food, customer, pub)
-        customer.remove_cash(food.price)
-        customer.eat_food(food)
+    def buy_food_from_pub(food, pub)
+        remove_cash(food.price)
+        eat_food(food)
         pub.increase_till(food.price)
     end
 
