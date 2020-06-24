@@ -8,8 +8,7 @@ class Pub
         @drinks = drinks
     end
 
-    def get_drink(requested_drink_name)
-               
+    def get_drink(requested_drink_name)         
         for drink in @drinks
             if drink[:drink].name == requested_drink_name
                 return drink[:drink]
