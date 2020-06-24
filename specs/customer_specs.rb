@@ -58,6 +58,12 @@ class CustomerTest < MiniTest::Test
         assert_equal(2, @customer.drunkenness())
     end
 
+    def test_get_too_drunk()
+        while @pub.check_if_too_drunk(@customer) == nil
+            @customer.down_drink(@drink3)
+        end
+        assert_equal(20, @customer.drunkenness())
+    end
 end
 
     # def test_reduce_wallet()
