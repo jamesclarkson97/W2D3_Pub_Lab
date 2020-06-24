@@ -5,14 +5,15 @@ class Pub
     def initialize(name, drinks)
         @name = name
         @till = 150.0
-        @drinks = drinks
+        @drinks = drinks 
+        # drinks is an array with hashes
     end
 
     def get_drink(requested_drink_name)
                
         for drink in @drinks
-            if drink.name == requested_drink_name
-                return drink
+            if drink[:drink].name == requested_drink_name
+                return drink[:drink]
             end
         end
         return nil
@@ -46,3 +47,15 @@ end
     #     return get_drink_name(requested_drink_name).price
     # end
    
+
+    #class Pub
+
+    # initialise(name, drinks)
+
+    #@drinks = drinks
+    #stock = for each drink passed to stock, add a counter for that drink type
+    # 
+
+    #  drinks [drink1, drink2, drink3]
+
+    #  stock = {}
